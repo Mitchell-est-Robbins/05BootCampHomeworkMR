@@ -74,17 +74,6 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-.past{
-  background-color: grey;
-}
-
-.future{
-  background-color: green;
-}
-
-.present{
-  background-color: yellow;
-}
 
 /* // colors; set three time status colors past-grey present-red  future-green
 //         set blue for the save button */

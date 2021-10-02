@@ -31,14 +31,14 @@ setInterval(displayTime, 1000);
 // =============================================================================
 // task 2 bootstrap jquery
 //might have to use objects... shocker...
-var hourBlock = [
-  { 
-    id:"0",
-    hour:"08",
-    time:"08",
-    text: "",
-  }
-]
+// var hourBlock = [
+//   { 
+//     id:"0",
+//     hour:"08",
+//     time:"08",
+//     text: "",
+//   }
+// ]
 
 
 
@@ -48,30 +48,130 @@ var hourBlock = [
 // XX colors; set three time status colors past-grey present-red  future-green
 // XX       set blue for the save button
 
+// $(ids.join())
 
 
-// var hourOne = $()
+var ids = [
+  {id: '0800',
+  time: '08',
+  text: "",
+  }, 
+  {id: '0900',
+  time: '09',
+  text: "",
 
-// var xxxx = $('<input>')
-//   .attr({
-//       "class": 
-//   })
+  },
+  {id: '1000',
+  time: '10',
+  text: "",
+
+  },
+  {id: '1100',
+  time:'11',
+  text: "",
+
+  },
+  {id: '1200',
+  time: '12',
+  text: "",
+
+  },
+  {id: '1300',
+  time: '13',
+  text: "",
+
+  },
+  {id: '1400',
+  time: '14',
+  text: "",
+
+  },
+  {id: '1500',
+  time:'15',
+  text: "",
+
+  },
+  {id: '1600',
+  time: '16',
+  text: "",
+
+  },
+  {id: '1700',
+  time: '17',
+  text: "",
+
+  },
+ 
+ ]
+console.log(ids);
+
+ids.forEach(function(thisHour) { //ids=myday
+  var row= $("<form>").attr({
+    "class":"row"
+  });
+  $(".container").append(row);  //row =hourRow
+  
+  var hourbit = $("<div>") //hourField=hourbit
+  .text(thisHour.id)
+  .attr({
+    "class": "col-1 hour"
+  });
+
+  var plan =$("<div>") //data= plan
+  .attr({
+    "class": "col-10 description p-0"
+  })
+  var data= $("<textarea>");
+  plan.append(data);
+  data.attr("id", thisHour.id);
+  if (thisHour.time < moment().format("HH")) {
+     data.attr({
+       "class": "past",
+     })
+    } else if (thisHour.time > moment().format("HH")) {
+       data.attr({
+         "class": "future"
+       })
+      } else if (thisHour.time === moment().format ("HH")) {
+        data.attr({
+          "class": "present"
+        })
+      }
+
+      var saveBtn = $("<button>")
+      .attr({
+        "class": "col-1 saveBtn"
+      });
+      
+      row.append(hourbit, plan, saveBtn)
+
+ })
   
 
-// if (xxxxxxxx.time < moment(). format ("HH")) {
-//     yyyyy.attr ({
-//         "class": "past",
-//     })
-// }else if (xxxxxx.time > moment().format ("HH")) {
-//     yyyyy.attr({
-//         "class": "future"
-//     })
-// }else {
-//     yyyyy.attr({
-//         "class": "present"
-//     })
-// }
 
+
+
+
+
+// ids.forEach (function(thisHour) {
+//   var textZone = $("<input>");
+//   textZone.append(textZone);
+//   textZone.attr("id", thisHour.id )
+
+// if (thisHour.time < moment(). format ("HH")) {
+//   textZone.addClass ("past"
+//     )
+    
+// }else if (thisHour.time > moment().format ("HH")) {
+//   textZone.addClass("future"
+//     )
+// }else {
+//   textZone.addClass(
+//         "present"
+//     )
+    
+// }
+// });
 
 
 
