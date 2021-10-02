@@ -30,12 +30,52 @@ setInterval(displayTime, 1000);
 
 // =============================================================================
 // task 2 bootstrap jquery
+//might have to use objects... shocker...
+var hourBlock = [
+  { 
+    id:"0",
+    hour:"08",
+    time:"08",
+    text: "",
+  }
+]
 
-// go there needs to be a 10 rows with 3 columns bootstrapped in
-// go time brackets need to be added 8-6 using 24clock
 
-// go colors; set three time status colors past-grey present-red  future-green
-// go       set blue for the save button
+
+// XX there needs to be a 10 rows with 3 columns bootstrapped in
+// XX time brackets need to be added 8-6 using 24clock
+
+// XX colors; set three time status colors past-grey present-red  future-green
+// XX       set blue for the save button
+
+
+
+// var hourOne = $()
+
+// var xxxx = $('<input>')
+//   .attr({
+//       "class": 
+//   })
+  
+
+// if (xxxxxxxx.time < moment(). format ("HH")) {
+//     yyyyy.attr ({
+//         "class": "past",
+//     })
+// }else if (xxxxxx.time > moment().format ("HH")) {
+//     yyyyy.attr({
+//         "class": "future"
+//     })
+// }else {
+//     yyyyy.attr({
+//         "class": "present"
+//     })
+// }
+
+
+
+
+
 
 
 // do an if/while loop statement, if hour value is < timeDisplayEl style css past 
@@ -45,11 +85,13 @@ setInterval(displayTime, 1000);
 // ============================================================================
 // task 3
 
-// make it so you can write in the boxes (might already be a thing) 
-// then take shit from the assignment in class that lets you use the save button
-// the button has to have prevent default so it isn't refreshing all the time.
+// XXmake it so you can write in the boxes (might already be a thing) 
+// XXthen take shit from the assignment in class that lets you use the save button
+// XXthe button has to have prevent default so it isn't refreshing all the time.
 // ============================================================================
 // task 4
+
+
 
 // save button saves the bullshit into local storage
 // it works by event listener targeting click like what we learnt in class

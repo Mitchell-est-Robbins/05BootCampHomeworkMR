@@ -1,7 +1,7 @@
 # 05BootCampHomeworkMR
 The day planner 
 
-I worked with William Renfroe on this project
+I worked with William Renfroe on the initial planning and initial psuedo code of this project
 
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
