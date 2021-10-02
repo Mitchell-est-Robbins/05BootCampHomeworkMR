@@ -5,10 +5,10 @@
 // go THEN the current day is displayed at the top of the calendar
 // go WHEN I scroll down
 // go THEN I am presented with timeblocks for standard business hours
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-// WHEN I click into a timeblock
-// THEN I can enter an event
+// go WHEN I view the timeblocks for that day
+// go THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+// go WHEN I click into a timeblock
+// go THEN I can enter an event
 // WHEN I click the save button for that timeblock
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
@@ -104,46 +104,46 @@ var ids = [
  
  ]
 console.log(ids);
-
-ids.forEach(function(thisHour) { //ids=myday
+// setting up the time part and the row==========================
+ids.forEach(function(thisHour) { 
   var row= $("<form>").attr({
     "class":"row"
   });
-  $(".container").append(row);  //row =hourRow
+  $(".container").append(row);  
   
-  var hourbit = $("<div>") //hourField=hourbit
+  var hourbit = $("<div>") 
   .text(thisHour.id)
   .attr({
-    "class": "col-1 hour"
+    "class": "col-md-2 hour"
   });
-
-  var plan =$("<div>") //data= plan
+// the middle part (box and color part)==================
+  var TextBox =$("<div>") 
   .attr({
-    "class": "col-10 description p-0"
+    "class": "col-md-9 description p-0"
   })
-  var data= $("<textarea>");
-  plan.append(data);
-  data.attr("id", thisHour.id);
+  var colorSelector= $("<textarea>");
+  TextBox.append(colorSelector);
+  colorSelector.attr("id", thisHour.time);
   if (thisHour.time < moment().format("HH")) {
-     data.attr({
-       "class": "past",
-     })
+    colorSelector.addClass("past") 
+
     } else if (thisHour.time > moment().format("HH")) {
-       data.attr({
-         "class": "future"
-       })
-      } else if (thisHour.time === moment().format ("HH")) {
-        data.attr({
-          "class": "present"
-        })
+      colorSelector.addClass("future ")
+
+      } else{
+        colorSelector.addClass("present")
       }
 
+      //stupid save icon======================
+      var saveIcon = ("Save")
       var saveBtn = $("<button>")
       .attr({
         "class": "col-1 saveBtn"
       });
-      
-      row.append(hourbit, plan, saveBtn)
+      saveBtn.append(saveIcon);
+
+      // what brings it all to life=============================
+      row.append(hourbit, TextBox, saveBtn)
 
  })
   
